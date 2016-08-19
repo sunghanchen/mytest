@@ -5,6 +5,6 @@
 	<title>Document</title>
 </head>
 <body>
-	Hello 123
+	Hello
 </body>
 </html>
