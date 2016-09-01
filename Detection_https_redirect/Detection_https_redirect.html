@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- 判斷程式放在<head>最一開始的地方 -->
+<!-- 當網頁一開啟就進行判斷 -->
+<script type="text/javascript">
+	var RedirectProtocol='http://';
+	var RedirectHostName=window.location.hostname; // or 'www.xxx.com';
+	if(window.location.protocol=='https:'){
+		var RedirectPathName=window.location.pathname; //取得檔案路徑
+		var RedirectSearch=window.location.search; //取得?號後面參數
+		var RedirectHash=window.location.hash;  //取得#號後面參數
+		RedirectURL=RedirectProtocol+RedirectHostName+RedirectPathName+RedirectSearch+RedirectHash;
+		top.location.href=RedirectURL;
+	}
+</script>
+
+<meta charset="UTF-8">
+<title>Detection Https and Redirect</title>
+</head>
+<body>
+	
+</body>
+</html>
