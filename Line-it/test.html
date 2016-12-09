@@ -6,7 +6,7 @@
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
 <body>
-	
+
 	<h3>1) LINE 預設按鈕方式 無法指定分享網址 系統自行抓取 桌機手機都可以運作</h3>
 	<div class="line-it-button" style="display: none;" data-type="share-d" data-lang="zh-Hant"></div>
 	<script src="//scdn.line-apps.com/n/line_it/thirdparty/loader.min.js" async="async"　defer="defer"></script>
@@ -32,7 +32,9 @@ $(document).ready(function(){
 		if(UA.indexOf('mobi')!=-1){
 			location.href='line://msg/text/'+encodeURIComponent('測試測試')+'%0D%0A%0D%0A'+shareURL;
 		}else{
-			window.open('https://lineit.line.me/share/ui?url='+shareURL,'LINE','toolbar=no,scrollbars=no,status=no,resizable=yes,top=100,left=0,width=500,height=500');
+			var left=(screen.width/2)-(500/2);
+			var top=(screen.height/2)-(500/2);
+			window.open('https://lineit.line.me/share/ui?url='+shareURL,'LINE','toolbar=no,scrollbars=no,status=no,resizable=yes,top='+top+',left='+left+',width=500,height=500');
 		}
 	})
 
@@ -41,7 +43,6 @@ $(document).ready(function(){
 	})
 })
 </script>
-
 
 </body>
 </html>
