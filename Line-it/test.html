@@ -30,14 +30,14 @@ $(document).ready(function(){
 
 	$('#line2a').click(function(){
 		if(UA.indexOf('mobi')!=-1){
-			location.href='line://msg/text/TitleTitlePutHERE%0D%0A'+shareURL;
+			location.href='line://msg/text/'+encodeURIComponent('測試測試')+'%0D%0A%0D%0A'+shareURL;
 		}else{
 			window.open('https://lineit.line.me/share/ui?url='+shareURL,'LINE','toolbar=no,scrollbars=no,status=no,resizable=yes,top=100,left=0,width=500,height=500');
 		}
 	})
 
 	$('#line3a').click(function(){
-		location.href='http://line.naver.jp/R/msg/text/'+encodeURIComponent('測試測試')+'%0D%0A'+shareURL;
+		location.href='http://line.naver.jp/R/msg/text/'+encodeURIComponent('測試測試')+'%0D%0A%0D%0A'+shareURL;
 	})
 })
 </script>
