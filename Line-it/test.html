@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+	
+	<h3>1) LINE 預設按鈕方式 無法指定分享網址 系統自行抓取 桌機手機都可以運作</h3>
+	<div class="line-it-button" style="display: none;" data-type="share-d" data-lang="zh-Hant"></div>
+	<script src="//scdn.line-apps.com/n/line_it/thirdparty/loader.min.js" async="async"　defer="defer"></script>
+	
+	<h3>2) LINE 桌機Window Open 手機設定連結方式 可指定分享網址</h3>
+	<div id="line2">
+		<a href="#" id="line2a" onclick="return false;"><img src="img/72x120 (36x60).png"></a>
+	</div>
+	
+	<h3>3) LINE 一般設定連結方式 可指定分享網址 桌機無法執行</h3>
+	<div>
+		<a href="#" id="line3a" onclick="return false;"><img src="img/168x40 (84x20).png"></a>
+	</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	var shareURL=encodeURIComponent('https://tw.news.yahoo.com/韓國國會通過朴槿惠彈劾案-071429185.html');
+	var UA=navigator.userAgent;
+	UA=UA.toLowerCase()
+
+	$('#line2a').click(function(){
+		if(UA.indexOf('mobi')!=-1){
+			location.href='line://msg/text/TitleTitlePutHERE%0D%0A'+shareURL;
+		}else{
+			window.open('https://lineit.line.me/share/ui?url='+shareURL,'LINE','toolbar=no,scrollbars=no,status=no,resizable=yes,top=100,left=0,width=500,height=500');
+		}
+	})
+
+	$('#line3a').click(function(){
+		location.href='http://line.naver.jp/R/msg/text/'+encodeURIComponent('測試測試')+'%0D%0A'+shareURL;
+	})
+})
+</script>
+
+
+</body>
+</html>
